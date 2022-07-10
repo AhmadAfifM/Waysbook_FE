@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { useNavigate } from "react-router-dom";
+
 import { Button, Col, Row } from "antd";
 import "antd/dist/antd.min.css";
 
@@ -12,13 +14,19 @@ import dummyBooks from "../../dummyData/DataBooks";
 export default function CardBooks({ fromProfile = false }) {
   const [datas] = useState(dummyBooks);
 
+  let navigate = useNavigate();
+
+  const directToBooksDetail = () => {
+    navigate("/booksdetail");
+  };
+
   return (
     <>
       <div className="card-books">
         <Row className="d-flex flex-column">
           <Col className="d-flex flex-row">
             {datas.map((data, idx) => (
-              <Nav.Link key={idx}>
+              <Nav.Link onClick={directToBooksDetail} key={idx}>
                 <div className="card-product mt-2 text-black text-wrap">
                   <img src={data.imgBooks} className="img-books" alt="" />
                   <div className="p-2">

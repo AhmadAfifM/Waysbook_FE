@@ -14,6 +14,10 @@ import Profile from "./pages/Profile";
 import MyCart from "./pages/MyCart";
 import Home from "./pages/Home";
 import CardOnMyCart from "./components/card/CardOnMyCart";
+import BooksList from "../src/pages/BooksList";
+import ComplainAdmin from "../src/pages/ComplainAdmin";
+import ComplainCustomer from "../src/pages/ComplainCustomer";
+import EditProfile from "../src/components/modal/EditProfile";
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
           <Route path="/mycart" element={<MyCart />} />
           <Route path="/cardonmycart" element={<CardOnMyCart />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/booklist" element={<BooksList />} />
+          <Route path="/complainadmin" element={<ComplainAdmin />} />
+          <Route path="/complaincustomer" element={<ComplainCustomer />} />
+          <Route path="/editprofile" element={<EditProfile />} />
         </Routes>
       </BrowserRouter>
     </>

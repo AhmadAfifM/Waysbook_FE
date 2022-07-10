@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, message } from "antd";
 import "antd/dist/antd.min.css";
 import "../index.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
@@ -12,7 +12,21 @@ import NavsCustomer from "../components/NavsCustomer";
 export default function BooksDetail() {
   let navigate = useNavigate();
 
+  const success = () => {
+    <>
+      <div className="d-flex justify-content-center align-items-center">
+        {message.success(
+          <>
+            The product is <b> successfully </b> added to the cart
+          </>,
+          3
+        )}
+      </div>
+    </>;
+  };
+
   const directToCart = () => {
+    success();
     navigate("/mycart");
   };
 

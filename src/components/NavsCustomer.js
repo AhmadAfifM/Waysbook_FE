@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
 import "antd/dist/antd.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,7 +13,6 @@ import {
 } from "@ant-design/icons";
 // import { useNavigate } from "react-router";
 import imgWaysBook from "../assets/logos.png";
-import { useNavigate } from "react-router-dom";
 
 // IMPORT MODAL LOGIN & REGISTER
 
@@ -22,17 +22,31 @@ export default function NavsCustomer() {
   const directToHome = () => {
     navigate("/home");
   };
+  const directToComplain = () => {
+    navigate("/complaincustomer");
+  };
   const directToProfile = () => {
     navigate("/profile");
-    console.log("IN CART");
   };
   const directToMyCart = () => {
     navigate("/mycart");
-    console.log("IN CART");
+  };
+
+  const onClick = ({ key }) => {
+    if (key === "1") {
+      directToProfile();
+    }
+    if (key === "2") {
+      directToComplain();
+    }
+    if (key === "3") {
+      directToHome();
+    }
   };
 
   const menu = (
     <Menu
+      onClick={onClick}
       className="text-decoration-none p-2"
       style={{ borderRadius: "5px" }}
       items={[

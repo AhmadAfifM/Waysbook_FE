@@ -121,7 +121,7 @@ body {
   width: 144px !important;
   height: 50px !important;
   background: #393939 !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   font-size: 18px !important;
   border: 2px solid #393939 !important;
 }
@@ -263,4 +263,165 @@ body {
   color: "#393939";
   line-height: "160px";
   text-align: "center";
+}
+
+.listbooks-pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.imgbook-list-book {
+  width: 100px !important;
+  height: 120px !important;
+}
+
+.tag-list-book {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  width: 70px !important;
+  height: 30px !important;
+}
+
+.modal-edit-books {
+  min-width: 1100px !important;
+}
+
+.complain-admin-pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.img-chat {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: cover !important;
+}
+
+.chat-me {
+  background: #262626;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  max-width: 400px;
+}
+
+.chat-other {
+  background: #575757;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  max-width: 400px;
+}
+
+.input-message {
+  width: 100%;
+  height: 90%;
+  background: rgba(171, 171, 171, 0.15);
+  border: none;
+  color: #ffffff;
+}
+
+.text-message-admin {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-message-status {
+  font-size: 11px;
+  font-weight: 400;
+  color: #595959;
+}
+
+.header-message {
+  background-color: #c4c4c4;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content-message {
+  height: 70vh;
+  background-color: #dfdfdf;
+  overflow: auto;
+}
+
+.footer-message-customer {
+  height: 8vh;
+  background-color: #dfdfdf;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: center !important;
+  display: flex;
+}
+
+.send-message-customer {
+  width: 70.64px !important;
+  height: 45px !important;
+  background-color: #fff !important;
+  min-width: 1100px !important;
+  border-radius: 10px !important;
+}
+
+.btn-send-message-customer {
+  background-color: #8ad0d0 !important;
+  margin-left: 5px;
+  width: 70.64px !important;
+  height: 45px !important;
+  border-radius: 10px !important;
+}
+
+.text-message-customer {
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.header-message-customer {
+  background-color: #dfdfdf;
+  padding: 10px;
+  border-radius: 10px;
+  padding-top: 25px;
+  min-height: 30vh;
+  justify-content: start;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.divider-message-customer {
+  border: 1px solid #a7a5a5 !important;
+  filter: blur(2px);
+  width: 100px;
+}
+
+.footer-message-admin {
+  height: 8vh;
+  background-color: #dfdfdf;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: center !important;
+  display: flex;
+}
+
+.send-message-admin {
+  height: 45px !important;
+  background-color: #fff !important;
+  min-width: 800px !important;
+  border-radius: 10px !important;
+}
+
+.btn-send-message-admin {
+  background-color: #8ad0d0 !important;
+  margin-left: 5px;
+  width: 70.64px !important;
+  height: 45px !important;
+  border-radius: 10px !important;
 }

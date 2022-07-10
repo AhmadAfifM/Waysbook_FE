@@ -14,61 +14,83 @@ import { useNavigate } from "react-router-dom";
 
 // IMPORT MODAL LOGIN & REGISTER
 
-const menu = (
-  <Menu
-    className="text-decoration-none p-2"
-    style={{ borderRadius: "5px" }}
-    items={[
-      {
-        key: "1",
-        label: (
-          <>
-            <div className="d-flex align-items-center">
-              <FileAddOutlined style={{ fontSize: "20px" }} />
-              <Space>
-                <Nav.Link className="dropdown-text">Add Book</Nav.Link>
-              </Space>
-            </div>
-          </>
-        ),
-      },
-      {
-        key: "2",
-        label: (
-          <>
-            <div className="d-flex align-items-center">
-              <MessageOutlined style={{ fontSize: "20px" }} />
-              <Space>
-                <Nav.Link className="dropdown-text">Complain</Nav.Link>
-              </Space>
-            </div>
-          </>
-        ),
-      },
-      {
-        key: "3",
-        label: (
-          <>
-            <Divider className="mt-0 mb-1" />
-            <div className="d-flex align-items-center">
-              <LogoutOutlined style={{ fontSize: "20px", color: "#fc0303" }} />
-              <Space>
-                <Nav.Link className="dropdown-text">Logout</Nav.Link>
-              </Space>
-            </div>
-          </>
-        ),
-      },
-    ]}
-  />
-);
-
 export default function NavsAdmin() {
   let navigate = useNavigate();
 
   const directToHome = () => {
     navigate("/home");
   };
+  const directToMessage = () => {
+    navigate("/addbooksproduct");
+  };
+  const directToComplain = () => {
+    navigate("/complainadmin");
+  };
+
+  const onClick = ({ key }) => {
+    if (key === "1") {
+      directToMessage();
+    }
+    if (key === "2") {
+      directToComplain();
+    }
+    if (key === "3") {
+      directToHome();
+    }
+  };
+
+  const menu = (
+    <Menu
+      className="text-decoration-none p-2"
+      style={{ borderRadius: "5px" }}
+      onClick={onClick}
+      items={[
+        {
+          key: "1",
+          label: (
+            <>
+              <div className="d-flex align-items-center">
+                <FileAddOutlined style={{ fontSize: "20px" }} />
+                <Space>
+                  <Nav.Link className="dropdown-text">Add Book</Nav.Link>
+                </Space>
+              </div>
+            </>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <>
+              <div className="d-flex align-items-center">
+                <MessageOutlined style={{ fontSize: "20px" }} />
+                <Space>
+                  <Nav.Link className="dropdown-text">Complain</Nav.Link>
+                </Space>
+              </div>
+            </>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <>
+              <Divider className="mt-0 mb-1" />
+              <div className="d-flex align-items-center">
+                <LogoutOutlined
+                  style={{ fontSize: "20px", color: "#fc0303" }}
+                />
+                <Space>
+                  <Nav.Link className="dropdown-text">Logout</Nav.Link>
+                </Space>
+              </div>
+            </>
+          ),
+        },
+      ]}
+    />
+  );
+
   return (
     <Navbar>
       <Container>

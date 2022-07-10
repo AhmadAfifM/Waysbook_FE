@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, message } from "antd";
 import "antd/dist/antd.min.css";
 
 import convertRupiah from "rupiah-format";
@@ -11,8 +11,18 @@ export default function CardAddCart() {
   const [datas] = useState(dummyBooks);
   let navigate = useNavigate();
 
+  const success = () => {
+    message.success(
+      <>
+        The product is <b> successfully </b> added to the cart
+      </>,
+      3
+    );
+  };
+
   const directToDetail = () => {
-    navigate("/booksdetail");
+    success();
+    navigate("/mycart");
   };
   return (
     <>

@@ -1,9 +1,20 @@
 import React from "react";
-import { Row, Col, Button, Form, Input, message, Upload } from "antd";
+import {
+  Row,
+  Col,
+  Button,
+  Form,
+  Input,
+  message,
+  Upload,
+  DatePicker,
+} from "antd";
 import "antd/dist/antd.min.css";
 import "../index.css";
 import { FileAddOutlined, InboxOutlined } from "@ant-design/icons";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import NavsAdmin from "../components/NavsAdmin";
 
 const { TextArea } = Input;
 const { Dragger } = Upload;
@@ -34,11 +45,12 @@ const props = {
 
 export default function AddBooksDetail() {
   return (
-    <div className="container  pt-3 " style={{ minHeight: "100vh" }}>
+    <div className="container " style={{ minHeight: "100vh" }}>
+      <NavsAdmin />
       <Row className="justify-content-center">
         <Col
           span={19}
-          className="d-flex justify-content-start pb-5 ps-3"
+          className="d-flex justify-content-start pb-2 ps-3"
           style={{ width: "200vh" }}
         >
           <div
@@ -80,7 +92,7 @@ export default function AddBooksDetail() {
                 />
               </Form.Item>
               <Form.Item>
-                <Input
+                <DatePicker
                   style={{
                     backgroundColor: "rgba(210, 210, 210, 0.25)",
                     border: "2px solid #BCBCBC",

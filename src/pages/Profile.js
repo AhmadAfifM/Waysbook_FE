@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Button, Image } from "antd";
 import "antd/dist/antd.min.css";
 import "../index.css";
@@ -11,8 +11,13 @@ import {
 } from "@ant-design/icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavsCustomer from "../components/NavsCustomer";
+import EditProfile from "../components/modal/EditProfile";
 
 export default function Profile() {
+  const [showEditProfile, setShowEditProfile] = useState(false);
+  const handleCloseEditProfile = () => setShowEditProfile(false);
+  const handleShowEditProfile = () => setShowEditProfile(true);
+
   return (
     <>
       <div className="container d-flex justify-content-center  flex-column">
@@ -91,7 +96,12 @@ export default function Profile() {
                     />
                   </div>
                   <div>
-                    <Button className="btn-change-profile">
+                    <Button
+                      className="btn-change-profile"
+                      onClick={() => {
+                        handleShowEditProfile();
+                      }}
+                    >
                       Change Profile
                     </Button>
                   </div>
@@ -118,6 +128,10 @@ export default function Profile() {
             </Col>
           </Row>
         </div>
+        <EditProfile
+          showEditProfile={showEditProfile}
+          handleCloseEditProfile={handleCloseEditProfile}
+        />
       </div>
     </>
   );

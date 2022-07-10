@@ -1,9 +1,10 @@
 import React from "react";
-import { Table, Tag } from "antd";
+import { Empty, Table, Tag } from "antd";
 import "antd/dist/antd.min.css";
 import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import convertRupiah from "rupiah-format";
+
+import dataTranscation from "../dummyData/DataTransacation";
 
 import NavsAdmin from "../components/NavsAdmin";
 
@@ -66,40 +67,7 @@ const columns = [
   },
 ];
 
-const datas = [
-  {
-    id: 1,
-    users: "Debbyidha Apriyanti",
-    imgPayment: "bni.jpg",
-    productTitle: "Kami Lintang Terus Saya Apa ?",
-    totalPayment: <>{convertRupiah.convert("69000")}</>,
-    statusPayment: ["Approve"],
-  },
-  {
-    id: 2,
-    users: "Azerino Gatit Subriti",
-    imgPayment: "bca.jpg",
-    productTitle: "Just You and Me Aku Merasa Bahagia",
-    totalPayment: <>{convertRupiah.convert("49200")}</>,
-    statusPayment: ["Approve"],
-  },
-  {
-    id: 3,
-    users: "Bayu Setyi",
-    imgPayment: "permata.jpg",
-    productTitle: "RENCANA BESAR Untuk Mati Dengan Tenang",
-    totalPayment: <>{convertRupiah.convert("88000")}</>,
-    statusPayment: ["Pending"],
-  },
-  {
-    id: 4,
-    users: "Ahmad Syarifudin",
-    imgPayment: "permata.jpg",
-    productTitle: "Ayahku adalah ayahnya juga :')",
-    totalPayment: <>{convertRupiah.convert("103800")}</>,
-    statusPayment: ["Cancel"],
-  },
-];
+const datas = dataTranscation;
 
 export default function DataTranscations() {
   return (
@@ -116,7 +84,13 @@ export default function DataTranscations() {
           >
             Incoming Transaction
           </div>
-          <Table columns={columns} dataSource={datas} />
+          {datas?.length !== 0 ? (
+            <Table columns={columns} dataSource={datas} />
+          ) : (
+            <Table style={{ minHeight: "500px" }} columns={columns}>
+              <Empty />
+            </Table>
+          )}
         </div>
       </div>
     </>

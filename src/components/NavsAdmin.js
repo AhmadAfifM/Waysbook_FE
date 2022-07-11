@@ -17,8 +17,8 @@ import { useNavigate } from "react-router-dom";
 export default function NavsAdmin() {
   let navigate = useNavigate();
 
-  const directToHome = () => {
-    navigate("/home");
+  const directToDataTransaction = () => {
+    navigate("/datatransactions");
   };
   const directToMessage = () => {
     navigate("/addbooksproduct");
@@ -35,7 +35,7 @@ export default function NavsAdmin() {
       directToComplain();
     }
     if (key === "3") {
-      directToHome();
+      directToDataTransaction();
     }
   };
 
@@ -96,7 +96,7 @@ export default function NavsAdmin() {
       <Container>
         <Navbar.Brand>
           <img
-            onClick={directToHome}
+            onClick={directToDataTransaction}
             src={imgWaysBook}
             alt="img"
             className="img-fluid pt-1"

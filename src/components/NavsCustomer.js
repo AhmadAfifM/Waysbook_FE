@@ -20,7 +20,7 @@ export default function NavsCustomer() {
   let navigate = useNavigate();
 
   const directToHome = () => {
-    navigate("/home");
+    navigate("/");
   };
   const directToComplain = () => {
     navigate("/complaincustomer");

@@ -1,4 +1,6 @@
-import { Modal, Button, Form, Nav } from "react-bootstrap";
+import { Modal, Nav } from "react-bootstrap";
+import { Input, Form, Button } from "antd";
+import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 // import { Link, useNavigate } from "react-router-dom";
 
 export default function Login({
@@ -22,31 +24,36 @@ export default function Login({
 
         <Modal.Body className="d-flex flex-column align-items-center">
           <Form>
-            <Form.Group>
-              <Form.Control
-                className="mt-3"
+            <Form.Item>
+              <Input
                 style={{
-                  backgroundColor: "#D2D2D2",
-                  border: "2px solid #BCBCBC ",
+                  backgroundColor: "#FFF",
+                  border: "2px solid #BCBCBC",
+                  color: "#333333",
                   width: "350px",
                   height: "50px",
+                  borderRadius: "5px",
                 }}
-                type="email"
                 placeholder="Email"
               />
-            </Form.Group>
-            <Form.Group className="pt-3">
-              <Form.Control
+            </Form.Item>
+
+            <Form.Item>
+              <Input.Password
                 style={{
-                  backgroundColor: "#D2D2D2",
-                  border: "2px solid #BCBCBC ",
+                  backgroundColor: "#FFF",
+                  border: "2px solid #BCBCBC",
+                  color: "#333333",
                   width: "350px",
                   height: "50px",
+                  borderRadius: "5px",
                 }}
-                type="password"
+                iconRender={(visible) =>
+                  visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                }
                 placeholder="Password"
               />
-            </Form.Group>
+            </Form.Item>
           </Form>
 
           <Button

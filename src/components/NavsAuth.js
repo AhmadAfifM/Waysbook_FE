@@ -22,7 +22,7 @@ export default function NavsAuth() {
   let navigate = useNavigate();
 
   const directToHome = () => {
-    navigate("/home");
+    navigate("/");
   };
   return (
     <Navbar>

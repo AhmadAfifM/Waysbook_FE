@@ -8,6 +8,7 @@ import {
   MessageOutlined,
   LogoutOutlined,
   FileAddOutlined,
+  BookOutlined,
 } from "@ant-design/icons";
 import imgWaysBook from "../assets/logos.png";
 import { useNavigate } from "react-router-dom";
@@ -26,6 +27,9 @@ export default function NavsAdmin() {
   const directToComplain = () => {
     navigate("/complainadmin");
   };
+  const directToBookList = () => {
+    navigate("/booklist");
+  };
 
   const onClick = ({ key }) => {
     if (key === "1") {
@@ -35,6 +39,9 @@ export default function NavsAdmin() {
       directToComplain();
     }
     if (key === "3") {
+      directToBookList();
+    }
+    if (key === "4") {
       directToDataTransaction();
     }
   };
@@ -73,6 +80,19 @@ export default function NavsAdmin() {
         },
         {
           key: "3",
+          label: (
+            <>
+              <div className="d-flex align-items-center">
+                <BookOutlined style={{ fontSize: "20px" }} />
+                <Space>
+                  <Nav.Link className="dropdown-text">Book List</Nav.Link>
+                </Space>
+              </div>
+            </>
+          ),
+        },
+        {
+          key: "4",
           label: (
             <>
               <Divider className="mt-0 mb-1" />
